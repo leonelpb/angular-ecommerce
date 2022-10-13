@@ -1,0 +1,31 @@
+
+      <div class="card shadow-sm mb-4 product-item">
+        <p class="card-text p-3">
+            <strong>{{ productItem.price| currency:'USD'}}</strong>
+            <i *ngIf="addedToWishList" class="fas fa-heart fa-lg" (click)="handleRemoveFromWishList()"></i>
+            <i *ngIf="!addedToWishList" class="far fa-heart fa-lg" (click)="handleAddToWishList()"></i>
+        </p>
+        <img class="bd-placeholder-img card-img-top p-3" width="100%" height="225" [src]="productItem.image"><title>Placeholder</title>
+        <p class="card-text p-2">
+            <strong> {{ productItem.title | slice: 0:20 }}...</strong>
+        </p>
+        <div class="card-body">
+          <p class="card-text">{{productItem.description | slice: 0:80}}...</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              
+              <button type="button"
+               class="btn btn-sm btn-primary"
+               (click)="handleAddToCart()">
+               Add to cart
+              </button>
+
+              <button type="button" 
+              class="btn btn-sm btn-outline-secondary">
+              View details
+            </button>
+
+            </div>
+          </div>
+        </div>
+      </div>

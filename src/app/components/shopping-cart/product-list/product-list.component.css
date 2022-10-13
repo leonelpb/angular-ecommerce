@@ -1,0 +1,6 @@
+@media (max-width:600px) and (min-width:400px) {
+    .productList{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+}

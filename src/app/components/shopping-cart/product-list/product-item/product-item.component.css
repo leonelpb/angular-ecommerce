@@ -1,0 +1,9 @@
+.product-item{
+    min-height: 580px;
+}
+.fa-heart{
+    cursor: pointer;
+    color: palevioletred;
+    float:right;
+    padding: 10px;
+}

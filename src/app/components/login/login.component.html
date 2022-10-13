@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="guest-form-card card">
+        <div class="card-header text-center">
+            <h2>Login here</h2>
+        </div>
+        <!-- ngSubmit se usa tanto en reactive form, como en template driven forms-->
+        <div class="card-body">
+            <!--
+                usamos.valid junto con los input que llevan la propiedad required, de esta forma nos aseguramos que solo
+                si los inputs estan llenos, en ese momento pasa a la siguiente instancia que seria
+                ejecutar "login()"
+            -->
+            <form #loginForm="ngForm" (ngSubmit)=" loginForm.valid && login()">
+                <div class="from-group">
+                    <label for="username">Username</label>
+                    <input id="username" class="form-control" name="username" #username="ngModel" [ngClass]="{'is-invalid': loginForm.submitted && username.invalid || username.touched && username.invalid}" [(ngModel)]="model.username" required>
+                    <span class="invalid-feedback">Username is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Pasword</label>
+                    <input id="password" class="form-control" name="pasword" #pasword="ngModel" [ngClass]="{'is-invalid': loginForm.submitted && pasword.invalid || pasword.touched && pasword.invalid}" [(ngModel)]="model.pasword" required>
+                    <span class="invalid-feedback">Pasword is required</span>
+                </div>
+                <div class="from-group mt-2 mb-2">
+                    <input type="checkbox" id="remenber" name="remenber" #remenber="ngModel" [(ngModel)]="model.remenber">
+                    <label class="ml-1" for="remenber">Remenber me</label>
+                </div>
+                <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid" >Login</button>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<p>
+    <a [routerLink]="['/register']"></a>
+</p>

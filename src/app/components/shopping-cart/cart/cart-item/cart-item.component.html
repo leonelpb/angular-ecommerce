@@ -1,0 +1,7 @@
+<div class="cart-item">
+    <span>{{cartItem.productName }}</span> x 
+    <span>{{cartItem.qty}} </span>:
+
+     <strong>{{(cartItem.price * cartItem.qty) |currency:'USD'}} </strong>
+     <button class=" btnDelete btn btn-primary btn-sm"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+</div>
