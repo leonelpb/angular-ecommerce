@@ -1,7 +1,13 @@
 <div class="cart-item">
-    <span>{{cartItem.productName }}</span> x 
-    <span>{{cartItem.qty}} </span>:
-
-     <strong>{{(cartItem.price * cartItem.qty) |currency:'USD'}} </strong>
-     <button class=" btnDelete btn btn-primary btn-sm"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+  <div style="margin-right: 15px;">
+    <span>{{cartItem.productName }}</span>
+    X
+    <span>{{cartItem.qty}} </span>
+    :
+    <strong>{{(cartItem.price * cartItem.qty) |currency:'USD'}} </strong>
+  </div>
+  <!-- Button to delete from the cart-component the product item -->
+  <button type="button" class=" btnDelete btn btn-sm" (click)="handleRemoveFromCart()">
+    <i class="fa-sharp fa-solid fa-xmark"></i>
+  </button>
 </div>
