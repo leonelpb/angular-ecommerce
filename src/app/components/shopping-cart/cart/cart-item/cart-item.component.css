@@ -1,10 +1,22 @@
+
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
 .btnDelete{
-    padding: 0.2px 2px;
+    position: absolute;
+    right: 10px;
+    padding: 2px;
     margin-left: 10px;
     background-color: rgb(189, 78, 78);
-    outline: none;
+    border-color: none;
+    color: #fff;
     
 }
 .btnDelete:hover{
-    background-color: black;
+    background-color: rgb(16, 64, 238);
+    color: #fff;
 }
